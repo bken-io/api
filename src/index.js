@@ -7,6 +7,7 @@ const context = require('./utils/context');
 const users = require('./modules/users/index');
 const videos = require('./modules/videos/index');
 const uploads = require('./modules/uploads/index');
+const playlists = require('./modules/playlists/index');
 
 const app = express();
 
@@ -15,7 +16,7 @@ const server = new ApolloServer({
   tracing: true,
   playground: true,
   introspection: true,
-  modules: [users, videos, uploads],
+  modules: [users, videos, uploads, playlists],
 });
 
 server.applyMiddleware({
